@@ -88,7 +88,16 @@ a {
 }
 
 /* Authorization */
+
+.auth-nav {
+  display: flex;
+  gap: 30px;
+  margin-left: auto;
+  align-items: center;
+}
 .auth-nav .link {
+  display: flex;
+  align-items: center;
   color: var(--title-text-color);
   font-weight: 500;
   font-size: 14px;
@@ -100,13 +109,6 @@ a {
 .auth-nav .link:hover,
 .auth-nav .link:focus {
   color: var(--accent-color);
-}
-
-.auth-nav {
-  display: flex;
-  gap: 30px;
-  margin-left: auto;
-  align-items: center;
 }
 
 .icon-envelope {
@@ -165,16 +167,7 @@ a {
   transform: scaleX(1);
 }
 
-.hero-title {
-  font-size: 44px;
-  line-height: 1.36;
-  text-transform: uppercase;
-  color: var(--primary-white-color);
-  margin-left: auto;
-  margin-right: auto;
-  letter-spacing: 0.06em;
-  width: 696px;
-}
+/* ГЕРОЙ */
 
 .hero {
   text-align: center;
@@ -188,7 +181,18 @@ a {
   margin-right: auto;
 }
 
-.button-studio {
+.hero__title {
+  font-size: 44px;
+  line-height: 1.36;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 0.06em;
+  width: 696px;
+}
+
+.btn {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
   cursor: pointer;
@@ -206,45 +210,41 @@ a {
     250ms background-color cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button-studio:hover,
-.button-studio:focus {
+.btn:hover,
+.btn:focus {
   background-color: #188ce8;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-.benefits .title {
+.benefits__details {
+  display: flex;
+}
+.benefits__item + .benefits__item {
+  margin-left: 30px;
+}
+.benefits__item {
+  width: 270px;
+}
+.benefits__title {
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
-.benefits .paragraph {
+.benefits__paragraph {
   font-size: 14px;
   line-height: 1.71;
   color: var(--title-text-color);
   margin-top: 10px;
   letter-spacing: 0.03em;
 }
-.benefits .details {
-  display: flex;
-}
 
-.benefits .item + .item {
-  margin-left: 30px;
-}
-.benefits .item {
-  width: 270px;
-}
-
-.icon-antenna,
-.icon-clock,
-.icon-diagram,
-.icon-astronaut {
+.benefits__icon {
   width: 70px;
   height: 70px;
 }
 
-.background-icon {
+.benefits__background {
   width: 270px;
   height: 120px;
   background-color: #f5f4fa;
@@ -252,11 +252,6 @@ a {
   margin-bottom: 30px;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-.auth-nav .link {
-  display: flex;
   align-items: center;
 }
 
@@ -585,7 +580,7 @@ img {
   top: 50%;
   left: 50%;
   width: 528px;
-  height: 581px;
+  min-height: 581px;
   padding: 40px;
   background: #fff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -611,6 +606,13 @@ img {
   fill: #000000;
   width: 11px;
   height: 11px;
+
+  transition: 250ms fill cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close:hover .icon-close,
+.close:focus .icon-close {
+  fill: var(--accent-color);
 }
 
 /* FORM */
@@ -675,14 +677,14 @@ img {
 
 .icon-modal {
   position: absolute;
-  left: 15px;
-  bottom: 14px;
+  left: 12px;
+  bottom: 11px;
 }
 
 .comment-modal {
   padding: 12px 16px;
   width: 100%;
-  height: 96px;
+  height: 120px;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
